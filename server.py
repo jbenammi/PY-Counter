@@ -4,7 +4,11 @@ app.secret_key = "ThisismyKey"
 
 @app.route('/')
 def index():
-	session['num'] += 1
+	
+	if 'num' not in session:
+		session["num"] = 1
+	else:
+		session["num"] += 1
 	return render_template('index.html')
 
 @app.route('/plustwo')
