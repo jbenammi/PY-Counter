@@ -18,6 +18,6 @@ def add_two():
 
 @app.route('/clear')
 def reset():
-	session['num'] = 0
+	session.clear()
 	return redirect('/')
 app.run(debug=True)
